@@ -31,18 +31,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Карта" id="2mc-bt-EUC">
-                        <barButtonItem key="leftBarButtonItem" title="Отслеживать" id="zpe-uG-kbM">
+                        <barButtonItem key="leftBarButtonItem" title="Новый трек" id="zpe-uG-kbM">
                             <connections>
                                 <action selector="updateLocation:" destination="BYZ-38-t0r" id="aBO-5Z-ou0"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Текущее" id="g1E-cM-3sM">
+                        <barButtonItem key="rightBarButtonItem" title="Старый маршрут" id="g1E-cM-3sM">
                             <connections>
-                                <action selector="currentLocation:" destination="BYZ-38-t0r" id="yen-pI-5NM"/>
+                                <action selector="showOldPath:" destination="BYZ-38-t0r" id="35v-yb-Em6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="locationBtn" destination="zpe-uG-kbM" id="8wZ-0p-mBz"/>
                         <outlet property="mapView" destination="kmq-h7-QNF" id="kgC-wE-16w"/>
                     </connections>
                 </viewController>
