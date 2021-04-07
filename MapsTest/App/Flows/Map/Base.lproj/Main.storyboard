@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Menu View Controller-->
+        <scene sceneID="EwT-pu-7hw">
+            <objects>
+                <viewController storyboardIdentifier="MenuViewController" id="0Ke-O1-Kly" customClass="MenuViewController" customModule="MapsTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R5u-3k-SYH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Oih-gR-xH9">
+                                <rect key="frame" x="151.5" y="398" width="111" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5Q-kW-ubT">
+                                        <rect key="frame" x="0.0" y="0.0" width="111" height="30"/>
+                                        <state key="normal" title="Показать карту"/>
+                                        <connections>
+                                            <action selector="onShowMapBtnTapped:" destination="0Ke-O1-Kly" eventType="touchUpInside" id="vgS-ZK-DsN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nX0-r0-lhb">
+                                        <rect key="frame" x="32.5" y="70" width="46" height="30"/>
+                                        <state key="normal" title="Выход"/>
+                                        <connections>
+                                            <action selector="onLogoutBtnTapped:" destination="0Ke-O1-Kly" eventType="touchUpInside" id="yew-4u-zN1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lou-SS-TNq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Oih-gR-xH9" firstAttribute="centerY" secondItem="R5u-3k-SYH" secondAttribute="centerY" id="lh3-Au-coW"/>
+                            <constraint firstItem="Oih-gR-xH9" firstAttribute="centerX" secondItem="R5u-3k-SYH" secondAttribute="centerX" id="voY-I1-OiR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="An1-Ov-h3q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-148" y="68"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="ZMc-bE-y2Q">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="EzM-n0-Kd4" customClass="MapViewController" customModule="MapsTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hg8-sa-XON">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kmq-h7-QNF" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ry8-Y7-LR6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kmq-h7-QNF" firstAttribute="leading" secondItem="ry8-Y7-LR6" secondAttribute="leading" id="WB4-t8-YPS"/>
+                            <constraint firstItem="kmq-h7-QNF" firstAttribute="trailing" secondItem="ry8-Y7-LR6" secondAttribute="trailing" id="ghs-YO-AKf"/>
+                            <constraint firstItem="kmq-h7-QNF" firstAttribute="top" secondItem="ry8-Y7-LR6" secondAttribute="top" id="iRI-Wr-63J"/>
+                            <constraint firstItem="ry8-Y7-LR6" firstAttribute="bottom" secondItem="kmq-h7-QNF" secondAttribute="bottom" id="xes-8t-pIa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="kmq-h7-QNF" id="kFD-Dv-1ey"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6JM-fD-ojH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="612" y="68"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

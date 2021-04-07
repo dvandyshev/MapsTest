@@ -10,8 +10,9 @@ import GoogleMaps
 import RealmSwift
 
 class MapViewController: UIViewController {
-    
+        
     @IBOutlet weak var mapView: GMSMapView!
+    
     let coordinate = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
     var locationManager: CLLocationManager?
     var route: GMSPolyline?
@@ -22,14 +23,34 @@ class MapViewController: UIViewController {
             updateLocationTitle()
         }
     }
-    @IBOutlet weak var locationBtn: UIBarButtonItem!
+    
+    lazy var locationBtn: UIBarButtonItem = {
+        let btn = UIBarButtonItem()
+        btn.image = UIImage(systemName: "play")
+        btn.action = #selector(updateLocation)
+        btn.target = self
+        return btn
+    }()
+    
+    lazy var oldPathBtn: UIBarButtonItem = {
+        let btn = UIBarButtonItem()
+        btn.image = UIImage(systemName: "arrow.clockwise")
+        btn.action = #selector(showOldPath)
+        btn.target = self
+        return btn
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         configureMap()
         configureLocationManager()
         print(Realm.Configuration.defaultConfiguration.fileURL)
-        
+    }
+    
+    func configureUI() {
+        navigationItem.rightBarButtonItems = [locationBtn, oldPathBtn]
+        navigationItem.title = "Карта"
     }
     
     func configureMap() {
@@ -80,7 +101,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    @IBAction func updateLocation(_ sender: Any) {
+    @objc func updateLocation(_ sender: Any) {
         isOnMonitoring.toggle()
         
         if isOnMonitoring {
@@ -107,17 +128,15 @@ class MapViewController: UIViewController {
         locationManager?.stopUpdatingLocation()
     }
     
-    
     func updateLocationTitle() {
         if isOnMonitoring {
-            locationBtn.title = "Закончить трек"
+            locationBtn.image = UIImage(systemName: "pause")
         } else {
-            locationBtn.title = "Новый трек"
+            locationBtn.image = UIImage(systemName: "play")
         }
     }
     
-    
-    @IBAction func showOldPath(_ sender: Any) {
+    @objc func showOldPath(_ sender: Any) {
         if isOnMonitoring {
             isOnMonitoring.toggle()
             stopTracking()
@@ -146,7 +165,6 @@ class MapViewController: UIViewController {
         let bounds = GMSCoordinateBounds(path: routePath)
         mapView.animate(with: GMSCameraUpdate.fit(bounds))        
     }
-    
 }
 
 extension MapViewController: CLLocationManagerDelegate {
