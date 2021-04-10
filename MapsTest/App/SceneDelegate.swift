@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var blind: UIView?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -37,13 +38,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        guard let blind = blind else { return }
+        blind.removeFromSuperview()
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
-        // Called when the scene will move from an active state to an inactive state.
-        // This may occur due to temporary interruptions (ex. an incoming phone call).
+        guard let window = window else { return }
+        let rect = CGRect(x: 0.0, y: 0.0, width: window.bounds.width, height: window.bounds.height)
+        blind = UIView(frame: rect)
+        guard let blind = blind else { return }
+        blind.backgroundColor = .gray
+        window.rootViewController?.view.addSubview(blind)
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {

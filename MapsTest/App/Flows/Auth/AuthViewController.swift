@@ -24,6 +24,8 @@ class AuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        login.autocorrectionType = .no
+        password.isSecureTextEntry = true
     }
     
     override func viewDidAppear(_ animated: Bool) {

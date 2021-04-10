@@ -24,6 +24,8 @@ class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        login.autocorrectionType = .no
+        password.isSecureTextEntry = true
     }
 
     @IBAction func onRegister(_ sender: Any) {
