@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class RegistrationViewController: UIViewController {
 
     @IBOutlet weak var login: UITextField!
     @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var registrationBtn: UIButton!
     
     lazy var userInfo: UserAuth = {
        UserAuth()
@@ -26,6 +29,15 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         login.autocorrectionType = .no
         password.isSecureTextEntry = true
+        configureRegistrationBindings()
+    }
+    
+    func configureRegistrationBindings() {
+        Observable.combineLatest(login.rx.text, password.rx.text).map { login, password in
+            return !(login ?? "").isEmpty && (password ?? "").count >= 6
+        }.bind { [weak registrationBtn] inputField in
+            registrationBtn?.isEnabled = inputField
+        }
     }
 
     @IBAction func onRegister(_ sender: Any) {
