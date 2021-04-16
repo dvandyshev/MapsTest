@@ -16,6 +16,17 @@
 		0A150C872613157800900000 /* MapsTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A150C862613157800900000 /* MapsTestUITests.swift */; };
 		0A150CAB26131F1500900000 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A150CAA26131F1500900000 /* MapViewController.swift */; };
 		0A55DD082614895900A61E29 /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A55DD072614895900A61E29 /* UserLocation.swift */; };
+		0A5E0DB2261B555700A61151 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E0DB1261B555700A61151 /* User.swift */; };
+		0A5E0DB7261B57B400A61151 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A5E0DB6261B57B400A61151 /* Auth.storyboard */; };
+		0A5E0DBF261C326F00A61151 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E0DBE261C326F00A61151 /* AuthViewController.swift */; };
+		0A5E0DC4261C487E00A61151 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E0DC3261C487E00A61151 /* RegistrationViewController.swift */; };
+		0A5E0DD0261C4CDA00A61151 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5E0DCF261C4CDA00A61151 /* MenuViewController.swift */; };
+		0A760746261C58190001C954 /* UIStoryboard+StoryboardIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A760745261C58190001C954 /* UIStoryboard+StoryboardIdentifiable.swift */; };
+		0A76074D261C5AE40001C954 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A76074C261C5AE40001C954 /* BaseRouter.swift */; };
+		0AA5C632261C890D00C8B480 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5C631261C890D00C8B480 /* AuthRouter.swift */; };
+		0AA5C637261C8CCC00C8B480 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5C636261C8CCC00C8B480 /* MenuRouter.swift */; };
+		0AA5C63E261C930400C8B480 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5C63D261C930400C8B480 /* UserAuth.swift */; };
+		0AA5C643261C9E2F00C8B480 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5C642261C9E2F00C8B480 /* RegistrationRouter.swift */; };
 		3AAB77357B6DF33375A018A1 /* Pods_MapsTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38176D3D63A26AF0D9F629B8 /* Pods_MapsTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +63,18 @@
 		0A150C882613157800900000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A150CAA26131F1500900000 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0A55DD072614895900A61E29 /* UserLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
+		0A5E0DB1261B555700A61151 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0A5E0DB6261B57B400A61151 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		0A5E0DBE261C326F00A61151 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		0A5E0DC3261C487E00A61151 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		0A5E0DCF261C4CDA00A61151 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		0A760745261C58190001C954 /* UIStoryboard+StoryboardIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+StoryboardIdentifiable.swift"; sourceTree = "<group>"; };
+		0A76074C261C5AE40001C954 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		0A85EB2DCBB3560A575F59A9 /* Pods-MapsTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsTest.release.xcconfig"; path = "Target Support Files/Pods-MapsTest/Pods-MapsTest.release.xcconfig"; sourceTree = "<group>"; };
+		0AA5C631261C890D00C8B480 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		0AA5C636261C8CCC00C8B480 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
+		0AA5C63D261C930400C8B480 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
+		0AA5C642261C9E2F00C8B480 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		38176D3D63A26AF0D9F629B8 /* Pods_MapsTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapsTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8AB7AD89AC582009222969 /* Pods-MapsTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsTest.debug.xcconfig"; path = "Target Support Files/Pods-MapsTest/Pods-MapsTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,14 +130,11 @@
 		0A150C632613157800900000 /* MapsTest */ = {
 			isa = PBXGroup;
 			children = (
-				0A150C642613157800900000 /* AppDelegate.swift */,
-				0A150C662613157800900000 /* SceneDelegate.swift */,
-				0A150C6A2613157800900000 /* Main.storyboard */,
+				0A76074A261C5AC40001C954 /* Core */,
+				0A5E0DBB261C2C5F00A61151 /* App */,
 				0A150C6D2613157800900000 /* Assets.xcassets */,
 				0A150C6F2613157800900000 /* LaunchScreen.storyboard */,
 				0A150C722613157800900000 /* Info.plist */,
-				0A150CAA26131F1500900000 /* MapViewController.swift */,
-				0A55DD072614895900A61E29 /* UserLocation.swift */,
 			);
 			path = MapsTest;
 			sourceTree = "<group>";
@@ -136,6 +155,84 @@
 				0A150C882613157800900000 /* Info.plist */,
 			);
 			path = MapsTestUITests;
+			sourceTree = "<group>";
+		};
+		0A5E0DBB261C2C5F00A61151 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0AA5C63C261C924A00C8B480 /* BusinessLogic */,
+				0A150C642613157800900000 /* AppDelegate.swift */,
+				0A150C662613157800900000 /* SceneDelegate.swift */,
+				0AA5C63B261C91CD00C8B480 /* Entity */,
+				0A5E0DBC261C2C6600A61151 /* Flows */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0A5E0DBC261C2C6600A61151 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E0DC8261C4BC800A61151 /* Map */,
+				0A5E0DBD261C2D5500A61151 /* Auth */,
+				0A760745261C58190001C954 /* UIStoryboard+StoryboardIdentifiable.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		0A5E0DBD261C2D5500A61151 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E0DB6261B57B400A61151 /* Auth.storyboard */,
+				0A5E0DBE261C326F00A61151 /* AuthViewController.swift */,
+				0A5E0DC3261C487E00A61151 /* RegistrationViewController.swift */,
+				0AA5C631261C890D00C8B480 /* AuthRouter.swift */,
+				0AA5C642261C9E2F00C8B480 /* RegistrationRouter.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		0A5E0DC8261C4BC800A61151 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				0A150CAA26131F1500900000 /* MapViewController.swift */,
+				0A150C6A2613157800900000 /* Main.storyboard */,
+				0A5E0DCF261C4CDA00A61151 /* MenuViewController.swift */,
+				0AA5C636261C8CCC00C8B480 /* MenuRouter.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		0A76074A261C5AC40001C954 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0A76074B261C5AD30001C954 /* Router */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		0A76074B261C5AD30001C954 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				0A76074C261C5AE40001C954 /* BaseRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		0AA5C63B261C91CD00C8B480 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				0A5E0DB1261B555700A61151 /* User.swift */,
+				0A55DD072614895900A61E29 /* UserLocation.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		0AA5C63C261C924A00C8B480 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				0AA5C63D261C930400C8B480 /* UserAuth.swift */,
+			);
+			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
 		0B843C48BD645F5EE807FCDB /* Pods */ = {
@@ -261,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A5E0DB7261B57B400A61151 /* Auth.storyboard in Resources */,
 				0A150C712613157800900000 /* LaunchScreen.storyboard in Resources */,
 				0A150C6E2613157800900000 /* Assets.xcassets in Resources */,
 				0A150C6C2613157800900000 /* Main.storyboard in Resources */,
@@ -350,7 +448,17 @@
 				0A150C652613157800900000 /* AppDelegate.swift in Sources */,
 				0A55DD082614895900A61E29 /* UserLocation.swift in Sources */,
 				0A150CAB26131F1500900000 /* MapViewController.swift in Sources */,
+				0A5E0DB2261B555700A61151 /* User.swift in Sources */,
+				0A5E0DC4261C487E00A61151 /* RegistrationViewController.swift in Sources */,
+				0AA5C643261C9E2F00C8B480 /* RegistrationRouter.swift in Sources */,
+				0AA5C637261C8CCC00C8B480 /* MenuRouter.swift in Sources */,
+				0AA5C63E261C930400C8B480 /* UserAuth.swift in Sources */,
+				0A760746261C58190001C954 /* UIStoryboard+StoryboardIdentifiable.swift in Sources */,
+				0A5E0DBF261C326F00A61151 /* AuthViewController.swift in Sources */,
+				0A76074D261C5AE40001C954 /* BaseRouter.swift in Sources */,
+				0AA5C632261C890D00C8B480 /* AuthRouter.swift in Sources */,
 				0A150C672613157800900000 /* SceneDelegate.swift in Sources */,
+				0A5E0DD0261C4CDA00A61151 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
