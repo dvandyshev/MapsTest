@@ -14,5 +14,6 @@ target 'MapsTest' do
 
 
   pod 'GoogleMaps'
+  pod 'RealmSwift'
 
 end
