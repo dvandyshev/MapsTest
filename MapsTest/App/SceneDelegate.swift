@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -14,6 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        getNotificationAllow()
         
         let controller: UIViewController
         let loginKey = "isLogin"
@@ -28,6 +31,39 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         
         self.window = window
+    }
+    
+    func getNotificationAllow() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            guard granted else {
+                print("Разрешение не получено")
+                return
+            }
+        }
+    }
+    
+    func sendNotificationRequest(content: UNNotificationContent, trigger: UNNotificationTrigger) {
+        let request = UNNotificationRequest(identifier: "alarm", content: content, trigger: trigger)
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func makeNotificationContent() -> UNNotificationContent {
+        let content = UNMutableNotificationContent()
+        content.title = "Карты"
+        content.subtitle = "Нуждаются в тебе"
+        content.body = "Без тебя на них никто не смотрит"
+        content.badge = 1
+        return content
+    }
+    
+    func makeIntervalNotificationTrigger() -> UNNotificationTrigger {
+        return UNTimeIntervalNotificationTrigger(timeInterval: 30*60, repeats: false)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -49,6 +85,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let blind = blind else { return }
         blind.backgroundColor = .gray
         window.rootViewController?.view.addSubview(blind)
+        
+        self.sendNotificationRequest(content: self.makeNotificationContent(), trigger: self.makeIntervalNotificationTrigger())
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
