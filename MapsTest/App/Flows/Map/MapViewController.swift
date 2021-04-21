@@ -14,7 +14,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: GMSMapView!
     
     let coordinate = CLLocationCoordinate2D(latitude: 55.753215, longitude: 37.622504)
-    var locationManager: CLLocationManager?
+    var locationManager = LocationManager.instance
     var route: GMSPolyline?
     var routePath: GMSMutablePath?
     let realm = try! Realm()
@@ -65,12 +65,15 @@ class MapViewController: UIViewController {
     }
     
     func configureLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.allowsBackgroundLocationUpdates = true
-        locationManager?.pausesLocationUpdatesAutomatically = false
-        locationManager?.startMonitoringSignificantLocationChanges()
-        locationManager?.requestAlwaysAuthorization()
+        locationManager.location.asObservable().bind { [weak self] location in
+            guard let location = location, let self = self else { return }
+            if self.isOnMonitoring {
+                self.routePath?.add(location.coordinate)
+                self.route?.path = self.routePath
+                let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 17)
+                self.mapView.animate(to: position)
+            }
+        }
     }
     
     func savePath(routePath: GMSMutablePath?) {
@@ -114,7 +117,7 @@ class MapViewController: UIViewController {
     
     func startTracking() {
         createRoute()
-        locationManager?.startUpdatingLocation()
+        locationManager.startUpdatingLocation()
     }
     
     func createRoute() {
@@ -125,7 +128,7 @@ class MapViewController: UIViewController {
     }
     
     func stopTracking() {
-        locationManager?.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation()
     }
     
     func updateLocationTitle() {
@@ -164,23 +167,5 @@ class MapViewController: UIViewController {
         
         let bounds = GMSCoordinateBounds(path: routePath)
         mapView.animate(with: GMSCameraUpdate.fit(bounds))        
-    }
-}
-
-extension MapViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else {
-            return
-        }       
-        if isOnMonitoring {
-            routePath?.add(location.coordinate)
-            route?.path = routePath
-            let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 17)
-            mapView.animate(to: position)
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
     }
 }

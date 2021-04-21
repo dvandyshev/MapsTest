@@ -27,6 +27,7 @@
 		0AA5C637261C8CCC00C8B480 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5C636261C8CCC00C8B480 /* MenuRouter.swift */; };
 		0AA5C63E261C930400C8B480 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5C63D261C930400C8B480 /* UserAuth.swift */; };
 		0AA5C643261C9E2F00C8B480 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA5C642261C9E2F00C8B480 /* RegistrationRouter.swift */; };
+		0AE1F8232624546A0097271B /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE1F8222624546A0097271B /* LocationManager.swift */; };
 		3AAB77357B6DF33375A018A1 /* Pods_MapsTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38176D3D63A26AF0D9F629B8 /* Pods_MapsTest.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		0AA5C636261C8CCC00C8B480 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
 		0AA5C63D261C930400C8B480 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		0AA5C642261C9E2F00C8B480 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
+		0AE1F8222624546A0097271B /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		38176D3D63A26AF0D9F629B8 /* Pods_MapsTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapsTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8AB7AD89AC582009222969 /* Pods-MapsTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapsTest.debug.xcconfig"; path = "Target Support Files/Pods-MapsTest/Pods-MapsTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +200,7 @@
 				0A150C6A2613157800900000 /* Main.storyboard */,
 				0A5E0DCF261C4CDA00A61151 /* MenuViewController.swift */,
 				0AA5C636261C8CCC00C8B480 /* MenuRouter.swift */,
+				0AE1F8222624546A0097271B /* LocationManager.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 			files = (
 				0A150C652613157800900000 /* AppDelegate.swift in Sources */,
 				0A55DD082614895900A61E29 /* UserLocation.swift in Sources */,
+				0AE1F8232624546A0097271B /* LocationManager.swift in Sources */,
 				0A150CAB26131F1500900000 /* MapViewController.swift in Sources */,
 				0A5E0DB2261B555700A61151 /* User.swift in Sources */,
 				0A5E0DC4261C487E00A61151 /* RegistrationViewController.swift in Sources */,

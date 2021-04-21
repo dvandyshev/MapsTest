@@ -58,6 +58,7 @@
                     </view>
                     <connections>
                         <outlet property="login" destination="gEA-Ll-xn8" id="PX6-rJ-Pfa"/>
+                        <outlet property="loginBtn" destination="2Ne-Uk-X73" id="Itm-Rp-9SU"/>
                         <outlet property="password" destination="ANY-Kl-P8D" id="dJJ-6m-4Zc"/>
                     </connections>
                 </viewController>
@@ -107,6 +108,7 @@
                     <connections>
                         <outlet property="login" destination="rx7-x5-0Gb" id="1qg-PP-XVJ"/>
                         <outlet property="password" destination="ATN-js-Lez" id="WrJ-8p-0If"/>
+                        <outlet property="registrationBtn" destination="eTZ-A0-YMl" id="5z0-IR-fuq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Tt-gN-J5o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
