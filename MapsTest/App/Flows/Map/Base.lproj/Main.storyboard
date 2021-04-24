@@ -17,20 +17,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Oih-gR-xH9">
-                                <rect key="frame" x="151.5" y="398" width="111" height="100"/>
+                                <rect key="frame" x="151" y="363" width="112" height="170"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5Q-kW-ubT">
-                                        <rect key="frame" x="0.0" y="0.0" width="111" height="30"/>
+                                        <rect key="frame" x="0.5" y="0.0" width="111" height="30"/>
                                         <state key="normal" title="Показать карту"/>
                                         <connections>
                                             <action selector="onShowMapBtnTapped:" destination="0Ke-O1-Kly" eventType="touchUpInside" id="vgS-ZK-DsN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nX0-r0-lhb">
-                                        <rect key="frame" x="32.5" y="70" width="46" height="30"/>
+                                        <rect key="frame" x="33" y="70" width="46" height="30"/>
                                         <state key="normal" title="Выход"/>
                                         <connections>
                                             <action selector="onLogoutBtnTapped:" destination="0Ke-O1-Kly" eventType="touchUpInside" id="yew-4u-zN1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZZ-FI-E40">
+                                        <rect key="frame" x="0.0" y="140" width="112" height="30"/>
+                                        <state key="normal" title="Создать аватар"/>
+                                        <connections>
+                                            <action selector="takePicture:" destination="0Ke-O1-Kly" eventType="touchUpInside" id="r5E-UT-8I5"/>
                                         </connections>
                                     </button>
                                 </subviews>

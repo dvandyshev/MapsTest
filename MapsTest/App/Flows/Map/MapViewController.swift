@@ -18,6 +18,8 @@ class MapViewController: UIViewController {
     var route: GMSPolyline?
     var routePath: GMSMutablePath?
     let realm = try! Realm()
+    var marker:GMSMarker?
+    var avatar: UIImage?
     var isOnMonitoring: Bool = false {
         didSet {
             updateLocationTitle()
@@ -46,7 +48,46 @@ class MapViewController: UIViewController {
         configureMap()
         configureLocationManager()
         print(Realm.Configuration.defaultConfiguration.fileURL)
+        
+        if let directory = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false) as URL {
+            let fileURL = directory.appendingPathComponent("avatar.png")
+            do {
+                let imageData = try Data(contentsOf: fileURL)
+                let image = try UIImage(data: imageData)
+                let targetSize = CGSize(width: 30, height: 30)
+
+                avatar = resizeImage(image: image, targetSize: targetSize)
+                
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
+    
+    func resizeImage(image: UIImage?, targetSize: CGSize) -> UIImage? {
+        guard let image = image else { return nil }
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
+    }
+    
     
     func configureUI() {
         navigationItem.rightBarButtonItems = [locationBtn, oldPathBtn]
@@ -59,9 +100,16 @@ class MapViewController: UIViewController {
     }
     
     func addMarker(_ coordinate: CLLocationCoordinate2D) {
-        let marker = GMSMarker(position: coordinate)
-        marker.map = mapView
-        mapView.animate(toLocation: coordinate)
+        if marker == nil {
+            marker = GMSMarker(position: coordinate)
+            marker?.map = mapView
+            
+            if let avatar = avatar {
+                marker?.icon = avatar
+            }
+        } else {
+            marker?.position = coordinate
+        }
     }
     
     func configureLocationManager() {
@@ -72,6 +120,7 @@ class MapViewController: UIViewController {
                 self.route?.path = self.routePath
                 let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 17)
                 self.mapView.animate(to: position)
+                self.addMarker(location.coordinate)
             }
         }
     }
